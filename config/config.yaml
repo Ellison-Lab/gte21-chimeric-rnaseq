@@ -1,0 +1,27 @@
+# https://www.biorxiv.org/content/10.1101/2020.03.23.000356v1.full
+# https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE115478
+MAIN_CONFIG: /scratch/mal456/TE-proj-reorg/TestisTEs2021/config/config.yaml #/media/mlawlor/work/TestisTEs2021/config/config.yaml
+# alignment options
+GENOME_FASTA: /projects/genetics/ellison_lab/genomes/dna/masked/dmel-all-chromosome-r6.22.fasta.masked #/media/mlawlor/work/data/genome/dmel-all-chromosome-r6.22.fasta.masked
+TRANSPOSON_FASTA: /projects/genetics/ellison_lab/genomes/dna/masked/dmel_repbase_lib.fasta #/media/mlawlor/work/data/genome/dmel_repbase_lib.fasta
+GENE_GTF: ftp://ftp.flybase.net/releases/FB2018_03/dmel_r6.22/gtf/dmel-all-r6.22.gtf.gz
+
+MAX_THREADS: 8
+
+samples:
+  larval_testes_cleaned_papain_01: # your own assigned name for this sample
+    fastq: # uri to fastq or fastq.gz. can be single or paired end
+      r1:
+      - ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR727/000/SRR7276830/SRR7276830.fastq.gz
+  larval_testes_papain_02:
+    fastq:
+      r1:
+      - ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR727/001/SRR7276831/SRR7276831.fastq.gz
+  larval_testes_papain_03:
+    fastq:
+      r1:
+      - ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR727/002/SRR7276832/SRR7276832.fastq.gz
+  larval_testes_papain_04:
+    fastq:
+      r1:
+      - ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR727/003/SRR7276833/SRR7276833.fastq.gz
