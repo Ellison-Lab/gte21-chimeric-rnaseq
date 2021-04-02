@@ -6,6 +6,6 @@ rule get_fusion_support:
     params:
         junctions = "results/star/{s}/Chimeric.out.junction"
     conda:
-        "../envs/bioc-general.yaml"
+        "../envs/tidyverse.yaml"
     script:
         "../scripts/get_fusion_support.R"

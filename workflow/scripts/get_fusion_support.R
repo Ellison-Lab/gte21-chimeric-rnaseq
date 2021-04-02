@@ -1,8 +1,5 @@
 library(tidyverse)
 library(magrittr)
-library(GenomicFeatures)
-library(jsonlite)
-library(rtracklayer)
 
 set.seed(1)
 
