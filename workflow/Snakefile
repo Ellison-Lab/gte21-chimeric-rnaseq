@@ -54,3 +54,4 @@ rule target:
         target_files
 
 include: "rules/rules.smk"
+include: "rules/chimerics.smk"
