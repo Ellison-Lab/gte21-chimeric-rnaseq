@@ -7,5 +7,5 @@ rule get_fusion_support:
         junctions = "results/star/{s}/Chimeric.out.junction"
     conda:
         "../envs/bioc-general.yaml"
-    scripts:
+    script:
         "../scripts/get_fusion_support.R"
