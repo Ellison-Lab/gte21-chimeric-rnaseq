@@ -37,7 +37,7 @@ target_files=[]
 
 # we pretty much always want these
 #target_files.append("")
-target_files += expand("results/star/{s}/", s=MY_SAMPLES)
+target_files += expand("results/chimerics/{s}.breakpoints.csv", s=MY_SAMPLES)
 
 subworkflow custom_genome:
     workdir:

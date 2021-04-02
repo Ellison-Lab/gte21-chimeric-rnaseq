@@ -6,3 +6,4 @@ multiqc_data
 work/
 results/
 ftp*/
+.Rproj.user
