@@ -170,3 +170,21 @@ rule star_align:
           --alignSplicedMateMapLmin 30 \
         --chimOutType Junctions
         """
+
+rule samtools_sort:
+    input:
+        rules.star_align.output
+    output:
+        bam = "results/aln/{s}.srt.bam"
+        bai = "results/aln/{s}.srt.bam.bai"
+    conda:
+        "../envs/samtools19.yaml"
+    resources:
+        time=240,
+        mem=20000,
+        cpus=12
+    shell:
+        """
+        samtools sort -@ {threads} -m 1G {input}/Aligned.out.bam -o {output.bam} &&
+        samtools index -@ {threads} {output.bam}
+        """
