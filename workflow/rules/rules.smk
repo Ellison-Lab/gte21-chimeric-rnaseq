@@ -175,8 +175,8 @@ rule samtools_sort:
     input:
         rules.star_align.output
     output:
-        bam = "results/aln/{s}.srt.bam"
-        bai = "results/aln/{s}.srt.bam.bai"
+        bam = "results/srt/{s}.srt.bam",
+        bai = "results/srt/{s}.srt.bam.bai"
     conda:
         "../envs/samtools19.yaml"
     resources:
