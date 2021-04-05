@@ -1,4 +1,5 @@
 library(Rsamtools)
+library(tidyverse)
 
 #bam <- Sys.glob('~/amarel-scratch/TE-proj-reorg/gte21-chimeric-rnaseq/results/srt/larval_testes_cleaned_papain_01.srt.bam')
 
