@@ -8,7 +8,7 @@ set.seed(1)
 chim_reads_fl <- snakemake@params[["junctions"]]
 samp <- snakemake@wildcards[["s"]] # samp <-"larval_testes_cleaned_papain_01"
 
-main_chroms <- c("2L"<"2R","3L","3R","4","X","Y")
+main_chroms <- c("2L", "2R","3L","3R","4","X","Y")
 
 # import chimeric junctions file
 chimeric_reads_0 <-  chim_reads_fl %>%
