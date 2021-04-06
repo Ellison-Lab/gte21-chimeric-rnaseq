@@ -188,3 +188,24 @@ rule samtools_sort:
         samtools sort -@ {threads} -m 1G {input}/Aligned.out.bam -o {output.bam} &&
         samtools index -@ {threads} {output.bam}
         """
+
+rule bigwigs:
+    input:
+        bam = rules.samtools_sort.output.bam,
+        bai = rules.samtools_sort.output.bai
+    output:
+        "results/bigwigs/{sample}.strand-{strand}.rpkm.bw"
+    threads:
+        24
+    conda:
+        "../envs/deeptools.yaml"
+    resources:
+        time=60,
+        mem=20000,
+        cpus=24
+    shell:
+        """
+        bamCoverage -b {input.bam} \
+            -o {output} -p {threads} -v --normalizeUsing RPKM \
+            --smoothLength 150 --filterRNAstrand {wildcards.strand}
+        """

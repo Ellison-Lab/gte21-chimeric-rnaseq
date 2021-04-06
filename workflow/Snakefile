@@ -39,6 +39,7 @@ target_files=[]
 #target_files.append("")
 target_files += expand("results/breakpoints/{s}.breakpoint-depths.csv", s=MY_SAMPLES)
 target_files += expand("results/breakpoints/{s}.total-contig-reads.csv", s=MY_SAMPLES)
+target_files += expand("results/bigwigs/{s}.strand-{strand}.rpkm.bw", s=MY_SAMPLES, strand=["forward","reverse"])
 
 subworkflow custom_genome:
     workdir:
