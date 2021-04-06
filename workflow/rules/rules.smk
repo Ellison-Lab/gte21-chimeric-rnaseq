@@ -194,7 +194,7 @@ rule bigwigs:
         bam = rules.samtools_sort.output.bam,
         bai = rules.samtools_sort.output.bai
     output:
-        "results/bigwigs/{sample}.strand-{strand}.rpkm.bw"
+        "results/bigwigs/{s}.strand-{strand}.rpkm.bw"
     threads:
         24
     conda:
