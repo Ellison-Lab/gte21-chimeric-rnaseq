@@ -16,6 +16,7 @@ chimeric_reads_0 <-  chim_reads_fl %>%
 
 # filter reads that map to a single breakpoint on a main chrom and a te and have the highest aln score of all mappings
 chimeric_reads_1 <- chimeric_reads_0 %>%
+  filter(num_chim_aln == 1) %>%
   group_by(read_name) %>%
   filter(length(unique(chr_acceptorB)) == 1) %>%
   filter(length(unique(chr_donorA)) == 1) %>%
