@@ -46,8 +46,8 @@ subworkflow custom_genome:
         "../../gte21-custom-genome/"
     snakefile:
         "../../gte21-custom-genome/workflow/Snakefile"
-    configfile:
-        MAIN_CONFIG
+    #configfile:
+    #    MAIN_CONFIG
 
 ruleorder: trim_se > trim_pe
 
